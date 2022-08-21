@@ -12,7 +12,7 @@ function Services() {
         <h2 className="special-heading" data-aos="fade-right">
           Services Ido
         </h2>
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-sm-12 col-md-4" data-aos="fade-in">
               <div className="card">

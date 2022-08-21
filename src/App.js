@@ -9,13 +9,17 @@ import Contact from "./home-components/Contact";
 import Hiring from "./home-components/Hiring";
 import Footer from "./home-components/Footer";
 import Pricing from "./home-components/Pricing";
-import Home from "./pages/Home";
-import Layout from "./pages/AboutPage";
 
 function App() {
   return (
     <>
-      <Home />
+      <Header />
+      <About />
+      <Services />
+      <Work />
+      <Contact />
+      <Hiring />
+      <Footer />
     </>
   );
 }

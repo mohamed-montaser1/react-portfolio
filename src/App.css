@@ -6,6 +6,10 @@
   --main-color-dark: #0f2c70;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Components */
 
 /* Start ScrollBar */
@@ -60,12 +64,31 @@
     font-size: 33px !important;
   }
 }
-
+@media (max-width: 321px) {
+  .special-heading {
+    font-size: 20px !important;
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
-
+/* Start Header */
+.black-layer {
+  background-color: black;
+  opacity: 0.4;
+  filter: blur(20px);
+  position: fixed;
+  /* width: 100%;
+  height: 100vh; */
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .black-layer {
+    height: 127vh;
+  }
+}
 /* Start Navbar */
 .navbar {
   height: 100px;
@@ -188,11 +211,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
-.landing .container .col-sm-12:last-child img:first-child {
-  height: 600px;
-  position: absolute;
-  top: -50px;
+.landing .container .col-sm-12:last-child img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .landing .container .col-sm-12:last-child {
+    margin-top: 80px;
+  }
 }
 
 .landing .btn {
@@ -211,8 +240,15 @@ body {
   .landing .col-md-6:first-child {
     margin-bottom: 40px;
   }
+  .landing .col-md-6:last-child img {
+    top: 246px !important;
+  }
 }
-
+@media (max-width: 991px) {
+  .landing .main-text {
+    font-size: 21px;
+  }
+}
 @media screen and (max-width: 429px) {
   .landing {
     text-align: center;
@@ -233,6 +269,12 @@ body {
   text-align: center;
   font-size: 17px;
   line-height: 3;
+}
+
+@media (max-width: 321px) {
+  .about p {
+    font-size: 12px;
+  }
 }
 
 .about p a {
@@ -325,7 +367,17 @@ body {
   margin: 60px 0;
   background-color: #ddd;
 }
-
+@media (max-width: 321px) {
+  .services {
+    padding: 60px 20px;
+  }
+  .services .card h4 {
+    font-size: 16px;
+  }
+  .services .card p {
+    font-size: 11px;
+  }
+}
 .services .container {
   justify-content: space-between;
 }

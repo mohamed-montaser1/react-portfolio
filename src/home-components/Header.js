@@ -32,21 +32,37 @@ window.onload = function () {
 
   setTimeout(() => (text.textContent += ""), 3100);
 
-  if (window.screen.width < 992 || window.innerWidth < 992) {
-    let ul = document.querySelector(".navbar ul");
-    let el = document.createElement("i");
-    el.classList.add("fa-solid", "fa-circle-xmark", "exit");
-    el.onclick = function () {
-      let navbarToggler = document.querySelector(".navbar-toggler");
-      navbarToggler.click();
-    };
-    ul.prepend(el);
-  }
+  // if (window.screen.width < 992 || window.innerWidth < 992) {
+  //   let ul = document.querySelector(".navbar ul");
+  //   let el = document.createElement("i");
+  //   el.classList.add("fa-solid", "fa-circle-xmark", "exit");
+  //   el.onclick = function () {
+  //     let navbarToggler = document.querySelector(".navbar-toggler");
+  //     navbarToggler.click();
+  //   };
+  //   ul.prepend(el);
+  // }
 };
 
 function Header() {
+  const toggleNavbarHandler = () => {
+    let blackLayer = document.querySelector(".black-layer");
+    blackLayer.style.width = "100%";
+    blackLayer.style.height = "100vh";
+    blackLayer.style.display = "block";
+  };
+
+  const closeSideNavbar = () => {
+    let navbarToggler = document.querySelector(".navbar-toggler");
+    navbarToggler.click()
+    let blackLayer = document.querySelector(".black-layer");
+    blackLayer.style.display = "none";
+    blackLayer.style.width = "0%";
+    blackLayer.style.height = "0vh";    
+  };
   return (
     <>
+      <div className="black-layer" onClick={closeSideNavbar}></div>
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <a className="navbar-brand" href="#">
@@ -60,6 +76,7 @@ function Header() {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleNavbarHandler}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
